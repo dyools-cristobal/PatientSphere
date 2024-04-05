@@ -1,0 +1,31 @@
+<div class="filter-container">
+    <mat-form-field class="filter-field" appearance="outline">
+        <mat-label>Search patient name</mat-label>
+        <input matInput [(ngModel)]="searchParam">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="sort-field">
+        <mat-label>Sort by</mat-label>
+        <select matNativeControl [(ngModel)]="sortBy" (ngModelChange)="rearrangePatients(sortBy)">
+            <option value="default">Default</option>
+            <option value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="gender">Gender</option>
+            <option value="age">Age</option>
+        </select>
+    </mat-form-field>
+</div>
+<div class="container">
+    <mat-card *ngFor="let patient of searchPatients()" class="dashboard-card"
+        [ngClass]="getGender(patient.physicalDetails.gender)" (click)="openPatientRecord(patient)">
+        <mat-card-content class="flex">
+            <mat-icon>{{ formatGender( patient.physicalDetails.gender)}}</mat-icon>
+            <span class="patient-name">{{ patient.firstName }} {{ patient.lastName }}</span>
+            <span class="example-spacer"></span>
+            <span class="patient-name">{{ calculateAge(patient.physicalDetails.dateOfBirth) }}</span>
+        </mat-card-content>
+    </mat-card>
+</div>
+<button mat-fab matTooltip="Add New Patient" class="new-patient-button">
+    <mat-icon>add</mat-icon>
+</button>

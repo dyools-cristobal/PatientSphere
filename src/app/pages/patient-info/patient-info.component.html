@@ -1,0 +1,434 @@
+<!-- <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Patient Details">
+        <div class="container">
+            <app-patient-photo></app-patient-photo>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.firstName">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Middle Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.middleName">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.lastName">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [(ngModel)]="patientInfo.physicalDetails.dateOfBirth" type="date">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Time of Birth</mat-label>
+                <input matInput [(ngModel)]="patientInfo.physicalDetails.timeOfBirth" type="time">
+            </mat-form-field>
+        </div>
+    </mat-tab>
+    <mat-tab label="Physical Details">
+        <div class="container">
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Gender</mat-label>
+                <input matInput [(ngModel)]="patientInfo.physicalDetails.gender">
+            </mat-form-field>
+            <div class="flex">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Age of Gestation</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.ageOfGestation">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Birth Weight</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.birthWeight">
+                </mat-form-field>
+            </div>
+            <div class="flex">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Birth Length</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.birthLength">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Head Circumference</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.headCircumference">
+                </mat-form-field>
+            </div>
+            <div class="flex">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Chest Circumference</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.chestCircumference">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Abdomen Circumference</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.abdomenCircumference">
+                </mat-form-field>
+            </div>
+            <div class="flex">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Newborn Screening</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.newbornScreening">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Blood Type</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.bloodType">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Known Allergies</mat-label>
+                <select matNativeControl [(ngModel)]="patientInfo.physicalDetails.knownAllergies">
+                    <option *ngFor="let allergy of allergies">{{ allergy }}</option>
+                </select>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Perinatal History</mat-label>
+                <textarea matInput [(ngModel)]="patientInfo.physicalDetails.perinatalHistory"></textarea>
+            </mat-form-field>
+        </div>
+    </mat-tab>
+    <mat-tab label="Parent Details">
+        <div class="container">
+            <span class="title">Mother Details</span>
+            <hr>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.firstName">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.lastName">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Age</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.age">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Occupations</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.occupation">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>contactNumber</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.contactNumber">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.emailAddress">
+            </mat-form-field>
+            <span class="title">Father Details</span>
+            <hr>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.firstName">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.lastName">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Age</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.age">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Occupations</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.occupation">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Contact Number</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.contactNumber">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.emailAddress">
+            </mat-form-field>
+            <span class="title">Home Details</span>
+            <hr>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Home Addess</mat-label>
+                <input matInput [(ngModel)]="patientInfo.parentDetails.homeDetails.homeAddress">
+            </mat-form-field>
+
+        </div>
+    </mat-tab>
+</mat-tab-group> -->
+
+<div class="container">
+    <app-patient-photo></app-patient-photo>
+    <mat-accordion multi>
+        <!-- Patient Information Panel -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="expansion-panel-header">
+                <mat-panel-title>
+                    Patient Information
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list *ngIf="!editMode">
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.firstName}} {{patientInfo.middleName}}
+                        {{patientInfo.lastName}}</span>
+                    <span matListItemLine>Name</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.dateOfBirth}}</span>
+                    <span matListItemLine>Date of Birth</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.timeOfBirth}}</span>
+                    <span matListItemLine>Time of Birth</span>
+                </mat-list-item>
+            </mat-list>
+            <div *ngIf="editMode">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.firstName">
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Middle Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.middleName">
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.lastName">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.dateOfBirth" type="date">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Time of Birth</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.timeOfBirth" type="time">
+                </mat-form-field>
+            </div>
+        </mat-expansion-panel>
+        <!-- Physical Information Panel -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="expansion-panel-header">
+                <mat-panel-title>
+                    Physical Information
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list *ngIf="!editMode">
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.gender}}</span>
+                    <span matListItemLine>Gender</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.ageOfGestation}}</span>
+                    <span matListItemLine>Age of Gestation</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.birthWeight}}</span>
+                    <span matListItemLine>Birth Weight (kg)</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.birthLength}}</span>
+                    <span matListItemLine>Birth Length (cm)</span>
+                </mat-list-item><mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.headCircumference}}</span>
+                    <span matListItemLine>Head Circumference (cm)</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.chestCircumference}}</span>
+                    <span matListItemLine>Chest Circumference (cm)</span>
+                </mat-list-item><mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.abdomenCircumference}}</span>
+                    <span matListItemLine>Abdomen Circumference (cm)</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.newbornScreening}}</span>
+                    <span matListItemLine>Newborn Screening</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.bloodType}}</span>
+                    <span matListItemLine>Blood Type</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.physicalDetails.perinatalHistory}}</span>
+                    <span matListItemLine>Prenatal History</span>
+                </mat-list-item>
+            </mat-list>
+            <div *ngIf="editMode">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.physicalDetails.gender">
+                </mat-form-field>
+                <div class="flex">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Age of Gestation</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.ageOfGestation">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Birth Weight</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.birthWeight">
+                    </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Birth Length</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.birthLength">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Head Circumference</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.headCircumference">
+                    </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Chest Circumference</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.chestCircumference">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Abdomen Circumference</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.abdomenCircumference">
+                    </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Newborn Screening</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.newbornScreening">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Blood Type</mat-label>
+                        <input matInput [(ngModel)]="patientInfo.physicalDetails.bloodType">
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Known Allergies</mat-label>
+                    <select matNativeControl [(ngModel)]="patientInfo.physicalDetails.knownAllergies">
+                        <option *ngFor="let allergy of allergies">{{ allergy }}</option>
+                    </select>
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Perinatal History</mat-label>
+                    <textarea matInput [(ngModel)]="patientInfo.physicalDetails.perinatalHistory"></textarea>
+                </mat-form-field>
+            </div>
+        </mat-expansion-panel>
+        <!-- Parent Information Panel -->
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="expansion-panel-header">
+                <mat-panel-title>
+                    Parent Information
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-list *ngIf="!editMode">
+                <div mat-subheader class="subheader">Mother Details</div>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.motherDetails.firstName}}
+                        {{patientInfo.parentDetails.motherDetails.lastName}}</span>
+                    <span matListItemLine>Name</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.motherDetails.age}}</span>
+                    <span matListItemLine>Age</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.motherDetails.occupation}}</span>
+                    <span matListItemLine>Occupation</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.motherDetails.contactNumber}}</span>
+                    <span matListItemLine>Contact Number</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.motherDetails.emailAddress}}</span>
+                    <span matListItemLine>Email</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <div mat-subheader class="subheader">Father Details</div>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.fatherDetails.firstName}}
+                        {{patientInfo.parentDetails.fatherDetails.lastName}}</span>
+                    <span matListItemLine>Name</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.fatherDetails.age}}</span>
+                    <span matListItemLine>Age</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.fatherDetails.occupation}}</span>
+                    <span matListItemLine>Occupation</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.fatherDetails.contactNumber}}</span>
+                    <span matListItemLine>Contact Number</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>{{patientInfo.parentDetails.fatherDetails.emailAddress}}</span>
+                    <span matListItemLine>Email</span>
+                </mat-list-item>
+            </mat-list>
+            <div *ngIf="editMode">
+                <span class="title">Mother Details</span>
+                <hr>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.firstName">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.lastName">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Age</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.age">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Occupations</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.occupation">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>contactNumber</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.contactNumber">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.motherDetails.emailAddress">
+                </mat-form-field>
+                <span class="title">Father Details</span>
+                <hr>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.firstName">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.lastName">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Age</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.age">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Occupations</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.occupation">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.contactNumber">
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.fatherDetails.emailAddress">
+                </mat-form-field>
+                <span class="title">Home Details</span>
+                <hr>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Home Addess</mat-label>
+                    <input matInput [(ngModel)]="patientInfo.parentDetails.homeDetails.homeAddress">
+                </mat-form-field>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div class="actions-container">
+    <button mat-raised-button class="full-width" color="primary" *ngIf="!editMode" (click)="changeEditMode()">EDIT
+        PATIENT INFO
+    </button>
+    <button mat-raised-button class="full-width" color="accent" *ngIf="editMode" (click)="changeEditMode()">SAVE
+        PATIENT INFO
+    </button>
+    <button mat-raised-button class="full-width" (click)="backToPatientDash()">BACK TO PATIENT LIST
+    </button>
+</div>

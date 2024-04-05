@@ -1,0 +1,21 @@
+export enum Allergy {
+    Peanut = 'Peanut',
+    Dairy = 'Dairy',
+    Gluten = 'Gluten',
+    Shellfish = 'Shellfish',
+    Soy = 'Soy',
+    Egg = 'Egg',
+    Fish = 'Fish',
+    TreeNut = 'Tree Nut',
+    Wheat = 'Wheat',
+    Corn = 'Corn',
+    Sesame = 'Sesame',
+    Latex = 'Latex',
+    Mold = 'Mold',
+    DustMites = 'Dust Mites',
+    PetDander = 'Pet Dander',
+    Pollen = 'Pollen',
+    InsectStings = 'Insect Stings',
+    Medications = 'Medications',
+    Other = 'Other'
+}

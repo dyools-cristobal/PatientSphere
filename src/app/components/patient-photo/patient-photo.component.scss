@@ -1,0 +1,15 @@
+@import '../../../assets/app_styles/mixins.scss';
+
+.photo-container {
+    max-height: 250px;
+    width: 100%;
+    max-width: 333px;
+    overflow: hidden;
+    margin: 0px auto $largest auto;
+    border-radius: $regular;
+    .patient-photo {
+        width: 100%;
+        min-height: 200px;
+        height: auto;
+    }
+}

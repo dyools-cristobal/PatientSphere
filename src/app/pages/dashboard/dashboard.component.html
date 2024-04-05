@@ -1,0 +1,25 @@
+<div class="container flex">
+    <mat-card class="card-action" matRipple routerLink="/patient-list">
+        <mat-card-content class="card-action--content">
+            <img src="../../../assets/images/icons/doctor-f.png" alt="" class="card-img">
+            <span>My Patients</span>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="card-action" matRipple>
+        <mat-card-content class="card-action--content">
+            <img src="../../../assets/images/icons/calendar-0.png" alt="" class="card-img">
+            <span>My Calendar</span>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="container">
+    <div class="title">You have {{ appointmentCount }} appointments today</div>
+    <mat-card *ngFor="let appointment of appointmentsToday; " class="dashboard-card"
+        (click)="goToAppointment(appointment)">
+        <mat-card-content class="dashboard-card--content">
+            <span class="dashboard-card--content--name">{{ appointment.patientName }}</span>
+            <span class="dashboard-card--content--time">{{ appointment.time}} </span>
+        </mat-card-content>
+    </mat-card>
+</div>

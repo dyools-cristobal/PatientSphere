@@ -1,0 +1,57 @@
+@import './variables.scss';
+
+.container {
+    display: block;
+    padding: $regular;
+    row-gap: $regular;
+}
+
+.title {
+    font-size: $larger;
+    margin: $regular 0px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.flex {
+    display: flex;
+    column-gap: $small;
+}
+
+.action-card {
+    border-radius: $small;
+    box-shadow: 4px 4px 4px lightgrey;
+    width: 100%;
+    height: 70px;
+    padding: $regular;
+    background-color: #eefff7;
+    text-align: center;
+    display: grid;
+    mat-icon {
+        margin: auto;
+    }
+    span {
+        font-size: $small;
+    }
+    img {
+        max-width: 50px;
+        height: auto;
+        margin: 0 auto 10px auto;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.card-female {
+    border-left: 10px solid #f4c0b9;
+  }
+  .card-male {
+    border-left: 10px solid #B5E5CF;
+  }

@@ -1,0 +1,38 @@
+<div class="container">
+    <app-patient-photo></app-patient-photo>
+    <div class="patient-info">
+        <mat-list>
+            <mat-list-item>
+                <span matListItemTitle>{{patientInfo.firstName}} {{patientInfo.middleName}}
+                    {{patientInfo.lastName}}</span>
+                <span matListItemLine>Name</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>{{patientInfo.physicalDetails.dateOfBirth}}</span>
+                <span matListItemLine>Date of Birth</span>
+            </mat-list-item>
+
+        </mat-list>
+    </div>
+    <div class="flex">
+        <div class="action-card" matRipple (click)="openPatientInfo()">
+            <img src="../../../assets/images/icons/medical-book.png" alt="">
+            <span>Info</span>
+        </div>
+        <div class="action-card" matRipple>
+            <img src="../../../assets/images/icons/calendar-2.png" alt="">
+            <span>Calendar</span>
+        </div>
+        <div class="action-card" matRipple (click)="openPatientGrowth()">
+            <img src="../../../assets/images/icons/presentation.png" alt="">
+            <span>Growth</span>
+        </div>
+        <div class="action-card" matRipple>
+            <img src="../../../assets/images/icons/medical-history.png" alt="">
+            <span>History</span>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <button mat-raised-button color=" full-width" routerLink="/patient-list">BACK TO PATIENT LIST</button>
+</div>

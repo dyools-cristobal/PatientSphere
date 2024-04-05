@@ -1,0 +1,71 @@
+@use '@angular/material' as mat;
+
+$ps-primary-palete: (
+50: #fcdbd6,
+100: #fad9d5,
+200: #fbc0b9,
+300: #fdc0b8,
+400: #f7aea4,
+500: #f4c0b9,
+600: #eb8f83,
+700: #dd7264,
+800: #b35245,
+900: #8b3a30,
+A100: #5c2720,
+contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #000,
+    600: #000,
+    700: #000,
+    800: #fff,
+    900: #fff,
+    
+)
+);
+
+$ps-accent-palete: (
+50: #eefff7,
+100: #e5fff3,
+200: #d7ffed,
+300: #d2f8e7,
+400: #c7f2df,
+500: #B5E5CF,
+600: #84b69f,
+700: #649b82,
+800: #457a62,
+900: #245841,
+A100: #0f3e29,
+contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #000,
+    600: #000,
+    700: #000,
+    800: #fff,
+    900: #fff,
+    
+)
+);
+
+$ps-primary: mat.define-palette($ps-primary-palete);
+$ps-accent: mat.define-palette($ps-accent-palete);
+$ps-warn: mat.define-palette($ps-primary-palete);
+
+$ps-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $ps-primary,
+            accent: $ps-accent,
+            warn: $ps-primary,
+        ),
+    )
+);
+
+@include mat.all-component-themes($ps-theme);

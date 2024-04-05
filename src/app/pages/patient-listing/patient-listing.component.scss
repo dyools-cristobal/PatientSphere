@@ -1,0 +1,78 @@
+@import '../../../assets/app_styles/mixins.scss';
+
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: $large $large 0 $large;
+  max-width: 100%;
+  .filter-field {
+      flex: 2 1 auto; /* Two columns on tablet */
+      margin-right: $regular;
+
+    @media screen and (max-width: 768px) {
+      flex: 0 0 calc(100%); /* One column on mobile */
+    }
+  }
+  .sort-field {
+    flex: 1;
+    @media screen and (max-width: 768px) {
+      flex: 0 0 calc(100%); /* One column on mobile */
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: $regular $regular 75px $regular;
+  // margin: 0 auto 150px auto;
+  max-width: 100%; /* Adjust as needed */
+    .dashboard-card {
+      background-color: white;
+      margin-bottom: $small;
+      flex: 0 0 calc(33.33% - 20px); /* Three columns on desktop */
+            
+      @media screen and (max-width: 1024px) {
+        flex: 0 0 calc(50% - 20px); /* Two columns on tablet */
+      }
+  
+      @media screen and (max-width: 768px) {
+        flex: 0 0 calc(100%); /* One column on mobile */
+      }
+            .patient-name {
+        font-size: $large;
+      }
+      &--content {
+          display: block;
+          border-left: 10px pink solid;
+          
+          &--time {
+              font-size: $small;
+          }
+          &--name{
+              font-size: $large;
+          }
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .card-action {
+      background-color: pink;
+      font-size: $larger;
+      padding: $smallest;
+      width: -webkit-fill-available;
+    }
+  }
+
+.new-patient-button {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  margin-right: $regular;
+  margin-bottom: $regular;
+}
+  

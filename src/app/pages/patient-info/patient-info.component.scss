@@ -1,0 +1,30 @@
+@import '../../../assets/app_styles/mixins.scss';
+
+.container  {
+    padding: $regular;
+    width: --webkit-fill-available;
+}
+
+.expansion-panel-header {
+    background-color: #e5fff3;
+    mat-panel-title {
+        font-size: $larger;
+        font-weight: 400;
+    }
+}
+.mat-expanded .expansion-panel-header {
+    background-color: #e5fff3;
+}
+
+.subheader {
+    font-size: $large;
+}
+
+.actions-container {
+    display: block;
+    padding: $regular;
+    width: --webkit-fill-available;
+    button {
+        margin-bottom: $regular;
+    }
+}

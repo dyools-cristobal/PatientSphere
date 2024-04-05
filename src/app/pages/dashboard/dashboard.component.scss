@@ -1,0 +1,54 @@
+@import '../../../assets/app_styles/mixins.scss';
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .flex {
+    display: flex;
+    column-gap: $small;
+  }
+.container {
+  .dashboard-card {
+    margin-bottom: $small;
+   
+    &--content {
+        border-left: 10px #f4c0b9 solid;
+        display: flex;
+        &--time {
+            font-size: $regular;
+            flex: 1;
+            text-align: end;
+        }
+        &--name{
+            font-size: $larger;
+            flex: 1;
+        }
+        
+    }
+   
+  }
+  .card-action {
+    background-color: #fcdbd6;
+    font-size: $larger;
+    padding: $smallest;
+    width: -webkit-fill-available;
+    &--content {
+      display: grid;
+      text-align: center;
+      .card-img {
+        width: 100%;
+        max-width: 80px;
+        height: auto;
+        margin: auto;
+      }
+      span {
+        margin-top: $smallest;
+        font-size: $regular;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
