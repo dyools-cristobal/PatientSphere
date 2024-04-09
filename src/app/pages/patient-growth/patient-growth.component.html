@@ -1,3 +1,18 @@
-<p>patient-growth works!</p>
-
-<canvas id="acquisitions"></canvas>
+<div class="container">
+    <span class="bmi">Current BMI: {{roundBMI(bmiCalculated)}}</span>
+</div>
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <highcharts-chart [Highcharts]="Highcharts" [options]="heightOptions"
+                class="chart"></highcharts-chart>
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card>
+        <mat-card-content>
+            <highcharts-chart [Highcharts]="Highcharts" [options]="weightOptions"
+                class="chart"></highcharts-chart>
+        </mat-card-content>
+    </mat-card>
+</div>
