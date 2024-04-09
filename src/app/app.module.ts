@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,7 +28,8 @@ import { MatListModule } from '@angular/material/list';
 
 // Angular Material Modules end here
 
-// ngx-charts
+// chart
+
 
 // Pages start here
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -39,16 +40,13 @@ import { PatientInfoComponent } from './pages/patient-info/patient-info.componen
 
 // Pages end here
 
-
-
 // Components start here
 import { HeaderComponent } from './components/header/header.component';
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard.component';
 import { PatientPhotoComponent } from './components/patient-photo/patient-photo.component';
-import { LineChartModule } from '@swimlane/ngx-charts';
 import { PatientNoteComponent } from './pages/patient-note/patient-note.component';
 import { CreateAppointmentComponent } from './pages/create-appointment/create-appointment.component';
-
+import { PatientGrowthModule } from './pages/patient-growth/patient-growth.module';
 
 // COmponents end here
 
@@ -91,11 +89,12 @@ import { CreateAppointmentComponent } from './pages/create-appointment/create-ap
     MatCheckboxModule,
     MatTooltipModule,
     MatListModule,
-    LineChartModule
+    PatientGrowthModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
