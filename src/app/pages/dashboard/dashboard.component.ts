@@ -38,7 +38,7 @@ export class DashboardComponent {
   }
 
   goToAppointment(patient: Appointment) {
-    this.router.navigate(['/patient-note', patient.patientId])
+    this.router.navigate(['/patient-dashboard', patient.patientId])
   }
 
 }

@@ -1,0 +1,27 @@
+@import '../../../assets/app_styles/mixins.scss';
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    .bmi {
+        font-size: $largest;
+        font-weight: 800;
+        color: #0f3e29;
+        text-align: center;
+        padding: $small;
+        margin: $largest auto $largest auto;
+    }
+    mat-card {
+        flex: 1;
+        min-width: 250px;
+        .chart {
+            margin: auto;
+            width: 100%;
+            max-width: 600px; 
+            height: 400px; 
+            display: block;
+        }
+    }
+}
