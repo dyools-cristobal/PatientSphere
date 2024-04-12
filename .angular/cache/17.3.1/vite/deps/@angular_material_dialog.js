@@ -13,7 +13,6 @@ import {
   PortalModule,
   TemplatePortal
 } from "./chunk-2ANKRIIC.js";
-import "./chunk-NJ4Y6EML.js";
 import {
   animate,
   animateChild,
@@ -24,6 +23,7 @@ import {
   transition,
   trigger
 } from "./chunk-BKUR2DIT.js";
+import "./chunk-NJ4Y6EML.js";
 import {
   A11yModule,
   Directionality,
@@ -1092,7 +1092,7 @@ function parseCssTime(time) {
   return null;
 }
 var MatDialogState;
-(function (MatDialogState2) {
+(function(MatDialogState2) {
   MatDialogState2[MatDialogState2["OPEN"] = 0] = "OPEN";
   MatDialogState2[MatDialogState2["CLOSING"] = 1] = "CLOSING";
   MatDialogState2[MatDialogState2["CLOSED"] = 2] = "CLOSED";

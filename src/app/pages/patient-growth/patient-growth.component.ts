@@ -97,7 +97,6 @@ export class PatientGrowthComponent {
 
   ngOnInit() {
     this.bmiCalculated = 5.7 / (63 * 63 / 10000);
-
   }
 
   roundBMI(bmi: number): string {
